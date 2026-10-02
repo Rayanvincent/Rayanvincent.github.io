@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="is-loading">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rayan Vincent — 3D Portfolio</title>
+  <meta name="description" content="Interactive 3D portfolio of Rayan Vincent, software engineer." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&family=Yellowtail&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="room.css" />
+</head>
+
+<body data-section="home">
+  <!-- ============ Loader ============ -->
+  <div id="loader">
+    <div class="loader-center">
+      <span class="loader-dot"></span>
+      <p class="loader-name">RAYAN VINCENT</p>
+      <p class="loader-sub">PORTFOLIO</p>
+      <div class="loader-progress"><span id="loaderBar"></span></div>
+      <p class="loader-pct mono" id="loaderPct">0%</p>
+      <button id="enterBtn" class="enter-btn" disabled>CLICK TO CONTINUE</button>
+    </div>
+  </div>
+
+  <!-- ============ 3D layers ============ -->
+  <div id="css-layer" aria-hidden="false"></div>
+  <canvas id="scene" aria-hidden="true"></canvas>
+  <div id="track"></div>
+
+  <!-- ============ HUD ============ -->
+  <header class="hud-top">
+    <a href="#" class="brand" data-goto="0">RAYAN VINCENT<span>.</span></a>
+    <div class="hud-actions">
+      <a href="classic.html" class="hud-btn">Traditional Portfolio</a>
+      <button class="hud-round" id="musicBtn" aria-label="Toggle music">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+          <path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z" />
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <nav class="dots" id="dots" aria-label="Sections"></nav>
+
+  <div class="scroll-cue" id="scrollCue"><span class="mono">SCROLL TO EXPLORE</span><i></i></div>
+
+  <button class="bell" id="bellBtn" aria-label="Notifications">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M6 8a6 6 0 1 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+    </svg>
+    <span class="bell-dot"></span>
+  </button>
+  <div class="toast" id="toast">
+    <strong>Rayan Vincent is open to work</strong>
+    <p>Available for full-time roles and freelance projects. Scroll to the phone to get in touch.</p>
+  </div>
+
+  <!-- ============ Screen contents (moved into 3D by room.js) ============ -->
+  <div id="panels" hidden>
+
+    <!-- Curved monitor -->
+    <div id="panel-monitor" class="panel monitor">
+      <div class="screen screen-idle">
+        <div class="wall-glow"></div>
+        <div class="wall-logo">RAYAN VINCENT<span>.</span></div>
+        <p class="wall-sub mono">software engineer · builder · problem solver</p>
+      </div>
+
+      <div class="screen screen-journey">
+        <h2 class="neon-title">My Journey</h2>
+        <div class="job-row">
+          <article class="job" style="--i:0">
+            <span class="job-date mono">2024 — PRESENT</span>
+            <h3>Software Engineer</h3>
+            <p class="job-co">Company Name</p>
+            <ul>
+              <li>Lead development of customer-facing product features.</li>
+              <li>Improved performance and Core Web Vitals on key flows.</li>
+              <li>Own features end-to-end with design and product.</li>
+            </ul>
+            <div class="job-tags"><span>React</span><span>Next.js</span><span>Node</span><span>AWS</span></div>
+          </article>
+          <article class="job" style="--i:1">
+            <span class="job-date mono">2022 — 2024</span>
+            <h3>Full Stack Developer</h3>
+            <p class="job-co">Company Name</p>
+            <ul>
+              <li>Built REST &amp; GraphQL APIs and admin dashboards.</li>
+              <li>Introduced CI/CD pipelines and automated tests.</li>
+              <li>Mentored junior developers via code review.</li>
+            </ul>
+            <div class="job-tags"><span>TypeScript</span><span>PostgreSQL</span><span>Docker</span></div>
+          </article>
+          <article class="job" style="--i:2">
+            <span class="job-date mono">2021 — 2022</span>
+            <h3>Junior Developer</h3>
+            <p class="job-co">Company Name</p>
+            <ul>
+              <li>Turned Figma designs into responsive UI.</li>
+              <li>Fixed production bugs and wrote tests.</li>
+              <li>Learned to ship fast without breaking things.</li>
+            </ul>
+            <div class="job-tags"><span>JavaScript</span><span>CSS</span><span>Git</span></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="screen screen-projects">
+        <header class="proj-head">
+          <h2>All Projects</h2>
+          <span class="mono">scroll inside ↓</span>
+        </header>
+        <div class="proj-grid" data-lenis-prevent>
+          <a class="proj" href="#" style="--c1:#ff3d5a;--c2:#ff9a3d">
+            <div class="proj-thumb"><span>01</span></div>
+            <h3>Project One</h3>
+            <p>Short one-line description of the project.</p>
+          </a>
+          <a class="proj" href="#" style="--c1:#7c5cff;--c2:#00d4ff">
+            <div class="proj-thumb"><span>02</span></div>
+            <h3>Project Two</h3>
+            <p>Short one-line description of the project.</p>
+          </a>
+          <a class="proj" href="#" style="--c1:#00c896;--c2:#3a7bff">
+            <div class="proj-thumb"><span>03</span></div>
+            <h3>Project Three</h3>
+            <p>Short one-line description of the project.</p>
+          </a>
+          <a class="proj" href="#" style="--c1:#ffcc00;--c2:#ff5c5c">
+            <div class="proj-thumb"><span>04</span></div>
+            <h3>Project Four</h3>
+            <p>Short one-line description of the project.</p>
+          </a>
+          <a class="proj" href="#" style="--c1:#ff5cc8;--c2:#7c5cff">
+            <div class="proj-thumb"><span>05</span></div>
+            <h3>Project Five</h3>
+            <p>Short one-line description of the project.</p>
+          </a>
+          <a class="proj" href="#" style="--c1:#00d4ff;--c2:#00c896">
+            <div class="proj-thumb"><span>06</span></div>
+            <h3>Project Six</h3>
+            <p>Short one-line description of the project.</p>
+          </a>
+          <a class="proj" href="#" style="--c1:#ff9a3d;--c2:#ffcc00">
+            <div class="proj-thumb"><span>07</span></div>
+            <h3>Project Seven</h3>
+            <p>Short one-line description of the project.</p>
+          </a>
+          <a class="proj" href="#" style="--c1:#3a7bff;--c2:#ff3d5a">
+            <div class="proj-thumb"><span>08</span></div>
+            <h3>Project Eight</h3>
+            <p>Short one-line description of the project.</p>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Laptop -->
+    <div id="panel-laptop" class="panel laptop">
+      <div class="term-bar"><i></i><i></i><i></i><span class="mono">rayan@dev: ~/skills</span></div>
+      <div class="term mono">
+        <p class="term-line" style="--i:0"><b>$</b> ./show --skillset</p>
+        <h2 class="term-title" style="--i:1">MY SKILLSET</h2>
+        <p class="term-line" style="--i:2"><em>languages</em> JavaScript · TypeScript · Python · SQL</p>
+        <p class="term-line" style="--i:3"><em>frontend </em> React · Next.js · Tailwind · Three.js</p>
+        <p class="term-line" style="--i:4"><em>backend </em> Node.js · Express · FastAPI · GraphQL</p>
+        <p class="term-line" style="--i:5"><em>databases</em> PostgreSQL · MongoDB · Redis · Prisma</p>
+        <p class="term-line" style="--i:6"><em>devops </em> AWS · Docker · Vercel · GitHub Actions</p>
+        <p class="term-line" style="--i:7"><em>tools </em> Git · Figma · Postman · Jira</p>
+        <p class="term-line" style="--i:8"><b>$</b> <span class="cursor">█</span></p>
+      </div>
+    </div>
+
+    <!-- Vertical monitor -->
+    <div id="panel-vertical" class="panel vertical">
+      <h2 class="faq-title">FREQUENTLY<br />ASKED<br />QUESTIONS</h2>
+      <div class="faq-list" data-lenis-prevent>
+        <details>
+          <summary>What do you build?</summary>
+          <p>Full-stack web apps, dashboards, APIs and interactive frontends.</p>
+        </details>
+        <details>
+          <summary>Are you open to freelance?</summary>
+          <p>Yes — send a short brief and I'll reply within 24 hours.</p>
+        </details>
+        <details>
+          <summary>Preferred stack?</summary>
+          <p>TypeScript, React / Next.js, Node.js and PostgreSQL — but I pick what fits.</p>
+        </details>
+        <details>
+          <summary>Do you work remotely?</summary>
+          <p>Yes, with teams across time zones.</p>
+        </details>
+        <details>
+          <summary>How do I contact you?</summary>
+          <p>Scroll to the phone on the desk — every channel is there.</p>
+        </details>
+      </div>
+    </div>
+
+    <!-- Phone -->
+    <div id="panel-phone" class="panel phone">
+      <div class="phone-apps">
+        <p class="apps-title">Get in touch</p>
+        <div class="apps-grid">
+          <a href="mailto:rayan@example.com" class="app"><span class="app-ic"
+              style="--bg:linear-gradient(135deg,#3a7bff,#00d4ff)">✉</span>Email</a>
+          <a href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener" class="app"><span
+              class="app-ic" style="--bg:#0a66c2">in</span>LinkedIn</a>
+          <a href="https://github.com/your-handle" target="_blank" rel="noopener" class="app"><span class="app-ic"
+              style="--bg:#24292f">GH</span>GitHub</a>
+          <a href="tel:+10000000000" class="app"><span class="app-ic"
+              style="--bg:linear-gradient(135deg,#00c896,#00a86b)">☏</span>Call</a>
+          <a href="#" class="app"><span class="app-ic"
+              style="--bg:linear-gradient(135deg,#ff3d5a,#ff9a3d)">CV</span>Resume</a>
+          <a href="https://x.com/your-handle" target="_blank" rel="noopener" class="app"><span class="app-ic"
+              style="--bg:#111">X</span>X</a>
+        </div>
+        <p class="apps-foot mono">rayan@example.com</p>
+      </div>
+      <div class="phone-lock">
+        <p class="lock-time" id="lockTime">9:41</p>
+        <p class="lock-date" id="lockDate">Monday</p>
+        <div class="lock-note"><strong>Rayan Vincent</strong><span>Let's build something great.</span></div>
+        <p class="lock-hint">swipe up to unlock</p>
+      </div>
+    </div>
+
+    <!-- Floating papers (blog) -->
+    <a id="panel-paper-0" class="panel paper" href="#">
+      <span class="paper-tag mono">ARTICLE · 01</span>
+      <h3>Designing APIs That Age Well</h3>
+      <p>Lessons from versioning, naming and keeping clients happy as a product grows.</p>
+      <span class="paper-read">Read →</span>
+    </a>
+    <a id="panel-paper-1" class="panel paper" href="#">
+      <span class="paper-tag mono">ARTICLE · 02</span>
+      <h3>Shipping 3D on the Web Without Killing Performance</h3>
+      <p>Practical tricks for fast WebGL scenes on real devices.</p>
+      <span class="paper-read">Read →</span>
+    </a>
+    <a id="panel-paper-2" class="panel paper" href="#">
+      <span class="paper-tag mono">ARTICLE · 03</span>
+      <h3>What Code Review Taught Me About Teams</h3>
+      <p>Reviewing code is really about communication. Here's what changed for me.</p>
+      <span class="paper-read">Read →</span>
+    </a>
+  </div>
+
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+  <script type="module" src="room.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rayan Vincent — Software Engineer</title>
+  <meta name="description" content="Portfolio of Rayan Vincent, a software engineer building fast, scalable web products." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas id="webgl" aria-hidden="true"></canvas>
+
+  <!-- Loader -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <span class="loader-logo">RV</span>
+      <div class="loader-bar"><span></span></div>
+      <p class="loader-text mono">rendering the 3D scene…</p>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">RAYAN VINCENT<span>.</span></a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#journey">Journey</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="themeToggle" aria-label="Toggle theme">
+          <svg class="sun" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <svg class="moon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+        </button>
+        <button class="icon-btn menu-btn" id="menuBtn" aria-label="Open menu">
+          <span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container hero-inner">
+        <p class="eyebrow mono reveal"><span class="dot"></span> Available for new opportunities</p>
+        <h1 class="reveal">Hi, I'm <span class="gradient-text">Rayan Vincent</span></h1>
+        <h2 class="hero-sub reveal">
+          <span id="typed">Software Engineer</span><span class="caret">|</span>
+        </h2>
+        <p class="hero-desc reveal">
+          I design and build fast, reliable web applications — from polished interfaces
+          to the APIs and infrastructure behind them. I care about clean code, great UX,
+          and shipping things that move the needle.
+        </p>
+        <div class="hero-ctas reveal">
+          <a href="#contact" class="btn btn-primary">Let's work together</a>
+          <a href="#projects" class="btn btn-ghost">View my work</a>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><span class="stat-num" data-count="20">0</span><span class="plus">+</span><p>Projects shipped</p></div>
+          <div class="stat"><span class="stat-num" data-count="3">0</span><span class="plus">+</span><p>Years experience</p></div>
+          <div class="stat"><span class="stat-num" data-count="100">0</span><span class="plus">%</span><p>Client satisfaction</p></div>
+        </div>
+      </div>
+      <a href="#journey" class="scroll-hint" aria-label="Scroll down"><span></span></a>
+    </section>
+
+    <!-- Journey -->
+    <section class="section" id="journey">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker mono">01 — Journey</p>
+          <h2>Where I've been building</h2>
+        </div>
+        <div class="timeline">
+          <article class="t-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-card tilt">
+              <div class="t-meta"><span class="mono">2024 — Present</span><span class="badge">Current</span></div>
+              <h3>Software Engineer <span>@ Company Name</span></h3>
+              <ul>
+                <li>Lead development of customer-facing features across the web platform.</li>
+                <li>Improved page performance and Core Web Vitals across key flows.</li>
+                <li>Collaborate with design and product to ship features end-to-end.</li>
+              </ul>
+              <div class="tags"><span>React</span><span>Next.js</span><span>Node.js</span><span>AWS</span></div>
+            </div>
+          </article>
+          <article class="t-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-card tilt">
+              <div class="t-meta"><span class="mono">2022 — 2024</span></div>
+              <h3>Full Stack Developer <span>@ Company Name</span></h3>
+              <ul>
+                <li>Built and maintained REST/GraphQL APIs and admin dashboards.</li>
+                <li>Introduced CI/CD pipelines and automated testing.</li>
+                <li>Mentored junior developers through code reviews.</li>
+              </ul>
+              <div class="tags"><span>TypeScript</span><span>PostgreSQL</span><span>Docker</span></div>
+            </div>
+          </article>
+          <article class="t-item reveal">
+            <div class="t-dot"></div>
+            <div class="t-card tilt">
+              <div class="t-meta"><span class="mono">2021 — 2022</span></div>
+              <h3>Junior Developer <span>@ Company Name</span></h3>
+              <ul>
+                <li>Developed responsive UI components from Figma designs.</li>
+                <li>Fixed bugs and wrote tests for production features.</li>
+              </ul>
+              <div class="tags"><span>JavaScript</span><span>HTML/CSS</span><span>Git</span></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section class="section alt" id="skills">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker mono">02 — Skillset</p>
+          <h2>Tools I use to build</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-card reveal tilt">
+            <h3>Languages &amp; Frameworks</h3>
+            <div class="chips"><span>JavaScript</span><span>TypeScript</span><span>React</span><span>Next.js</span><span>Node.js</span><span>Express</span><span>Python</span></div>
+          </div>
+          <div class="skill-card reveal tilt">
+            <h3>UI &amp; Animation</h3>
+            <div class="chips"><span>Tailwind CSS</span><span>Framer Motion</span><span>GSAP</span><span>Three.js</span><span>Shadcn/ui</span></div>
+          </div>
+          <div class="skill-card reveal tilt">
+            <h3>DevOps &amp; Cloud</h3>
+            <div class="chips"><span>AWS</span><span>Docker</span><span>Vercel</span><span>GitHub Actions</span><span>Nginx</span></div>
+          </div>
+          <div class="skill-card reveal tilt">
+            <h3>Databases</h3>
+            <div class="chips"><span>PostgreSQL</span><span>MongoDB</span><span>MySQL</span><span>Redis</span><span>Prisma</span></div>
+          </div>
+          <div class="skill-card reveal tilt">
+            <h3>Tools &amp; Platforms</h3>
+            <div class="chips"><span>Git</span><span>Figma</span><span>Postman</span><span>Jira</span><span>VS Code</span></div>
+          </div>
+          <div class="skill-card reveal tilt">
+            <h3>Practices</h3>
+            <div class="chips"><span>REST</span><span>GraphQL</span><span>Testing</span><span>Agile</span><span>SEO</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker mono">03 — Featured Projects</p>
+          <h2>Selected work</h2>
+        </div>
+        <div class="projects-grid">
+          <article class="project reveal tilt">
+            <div class="project-thumb" style="--c1:#7c5cff;--c2:#00d4ff"><span>01</span></div>
+            <div class="project-body">
+              <h3>Project One</h3>
+              <p>A short description of what this project does, the problem it solves and your role in building it.</p>
+              <div class="tags"><span>Next.js</span><span>Stripe</span><span>Postgres</span></div>
+              <div class="project-links"><a href="#" target="_blank" rel="noopener">Live ↗</a><a href="#" target="_blank" rel="noopener">Code ↗</a></div>
+            </div>
+          </article>
+          <article class="project reveal tilt">
+            <div class="project-thumb" style="--c1:#ff5c8a;--c2:#ffb15c"><span>02</span></div>
+            <div class="project-body">
+              <h3>Project Two</h3>
+              <p>A short description of what this project does, the problem it solves and your role in building it.</p>
+              <div class="tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+              <div class="project-links"><a href="#" target="_blank" rel="noopener">Live ↗</a><a href="#" target="_blank" rel="noopener">Code ↗</a></div>
+            </div>
+          </article>
+          <article class="project reveal tilt">
+            <div class="project-thumb" style="--c1:#00c896;--c2:#3a7bff"><span>03</span></div>
+            <div class="project-body">
+              <h3>Project Three</h3>
+              <p>A short description of what this project does, the problem it solves and your role in building it.</p>
+              <div class="tags"><span>TypeScript</span><span>AWS</span><span>Docker</span></div>
+              <div class="project-links"><a href="#" target="_blank" rel="noopener">Live ↗</a><a href="#" target="_blank" rel="noopener">Code ↗</a></div>
+            </div>
+          </article>
+          <article class="project reveal tilt">
+            <div class="project-thumb" style="--c1:#ffcc00;--c2:#ff5c5c"><span>04</span></div>
+            <div class="project-body">
+              <h3>Project Four</h3>
+              <p>A short description of what this project does, the problem it solves and your role in building it.</p>
+              <div class="tags"><span>Python</span><span>FastAPI</span><span>Redis</span></div>
+              <div class="project-links"><a href="#" target="_blank" rel="noopener">Live ↗</a><a href="#" target="_blank" rel="noopener">Code ↗</a></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section alt" id="faq">
+      <div class="container narrow">
+        <div class="section-head reveal">
+          <p class="kicker mono">04 — FAQ</p>
+          <h2>Questions, answered</h2>
+        </div>
+        <div class="tabs reveal" role="tablist">
+          <button class="tab active" data-filter="all">All</button>
+          <button class="tab" data-filter="services">Services</button>
+          <button class="tab" data-filter="technical">Technical</button>
+          <button class="tab" data-filter="general">General</button>
+        </div>
+        <div class="faq-list">
+          <details class="faq" data-cat="services"><summary>What services do you offer?</summary><p>Full-stack web development, frontend builds from designs, API development, and performance optimisation for existing apps.</p></details>
+          <details class="faq" data-cat="services"><summary>Do you take freelance projects?</summary><p>Yes — I'm open to freelance and contract work. Reach out via the contact form with a short brief.</p></details>
+          <details class="faq" data-cat="technical"><summary>What is your preferred tech stack?</summary><p>TypeScript, React/Next.js and Node.js with PostgreSQL, deployed on AWS or Vercel — but I pick what fits the project.</p></details>
+          <details class="faq" data-cat="technical"><summary>Do you write tests?</summary><p>Yes. I use unit and integration tests plus CI checks so changes ship with confidence.</p></details>
+          <details class="faq" data-cat="general"><summary>Where are you based?</summary><p>Your City, Your Country — and I work remotely with teams across time zones.</p></details>
+          <details class="faq" data-cat="general"><summary>How quickly do you respond?</summary><p>Usually within 24 hours on weekdays.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="kicker mono">05 — Contact</p>
+          <h2>Let's build something great</h2>
+        </div>
+        <div class="contact-grid">
+          <form class="contact-form reveal" id="contactForm">
+            <div class="row">
+              <label>Name<input type="text" name="name" required placeholder="Your name" /></label>
+              <label>Email<input type="email" name="email" required placeholder="you@example.com" /></label>
+            </div>
+            <label>Subject<input type="text" name="subject" placeholder="What's this about?" /></label>
+            <label>Message<textarea name="message" rows="5" required placeholder="Tell me about your project…"></textarea></label>
+            <button type="submit" class="btn btn-primary">Send message</button>
+            <p class="form-note" id="formNote"></p>
+          </form>
+          <div class="contact-cards reveal">
+            <a class="c-card" href="mailto:rayan@example.com">
+              <span class="c-icon">✉</span><div><p class="c-label">Email</p><p>rayan@example.com</p></div>
+            </a>
+            <a class="c-card" href="https://www.linkedin.com/in/your-handle" target="_blank" rel="noopener">
+              <span class="c-icon">in</span><div><p class="c-label">LinkedIn</p><p>/in/your-handle</p></div>
+            </a>
+            <a class="c-card" href="https://github.com/your-handle" target="_blank" rel="noopener">
+              <span class="c-icon">⌥</span><div><p class="c-label">GitHub</p><p>@your-handle</p></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Rayan Vincent. Built with care.</p>
+      <p class="mono">Based in Your City · Open to opportunities worldwide</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script type="importmap">
+    { "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js" } }
+  </script>
+  <script src="script.js"></script>
+  <script type="module" src="scene.js"></script>
+</body>
+</html>
